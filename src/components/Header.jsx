@@ -37,7 +37,7 @@ const Header = () => {
         <div className="sm:justify-end 
          sm:col-span-2 flex items-center gap-2">
           <div className="sm:hidden relative flex ">
-            <input type="text" placeholder="search for todo"   className="focus:bg-[#F2F0F1] z-10 opacity-0 peer focus:peer focus:opacity-100 focus:placeholder-text-slate-400 focus:placeholder-text-sm focus:px-4 focus:outline-[#002074] focus:border-none focus:rounded-3xl " />
+            {/* /<input type="text" placeholder="search for todo"   className="focus:bg-[#F2F0F1] z-10 opacity-0 peer focus:peer focus:opacity-100 focus:placeholder-text-slate-400 focus:placeholder-text-sm focus:px-4 focus:outline-[#002074] focus:border-none focus:rounded-3xl " /> */}
             <div className="peer peer-focus:hidden">
               <CiSearch className=" absolute top-1  bottom-0 right-1 block peer"/>
             </div>

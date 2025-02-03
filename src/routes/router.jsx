@@ -1,6 +1,8 @@
 import Layout from "../layout/Layout";
-import Login from "../auth/Login"
+import Login from "../auth/Login";
 import Register from "../auth/Register";
+//import PrivateRoute from "../routes/PrivateRoute";
+import test from "../pages/test";
 
 const routes = [
     {
@@ -8,7 +10,7 @@ const routes = [
         element: <Login/>
     },
     {
-        path: '/signup',
+        path: '/register',
         element: <Register/>
     },
     {
@@ -18,8 +20,11 @@ const routes = [
     {
         path: "/login",
         element: <Login/>
-
+    },
+    {
+        path: "/test",
+        element: <test/>
     }
-]
+];
 
 export default routes;

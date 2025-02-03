@@ -1,14 +1,37 @@
-import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Routes from './routes/router'
+import React, { Suspense } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import routes from './routes/router';
 
 const App = () => {
-  const routes = createBrowserRouter([...Routes])
-  return (
-    <div className=''>
-      <RouterProvider router={routes}/>
-    </div>
-  )
-}
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      children: [...routes],
+      errorElement: <div>Error Page</div>
+    }
+  ]);
 
-export default App
+  return (
+    <div className='min-h-screen bg-gray-50'>
+      <ToastContainer 
+        position="top-right" 
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <Suspense fallback={<div>Loading...</div>}>
+        <RouterProvider router={router}/>
+      </Suspense>
+    </div>
+  );
+};
+
+export default App;
